@@ -1,0 +1,30 @@
+
+package lab1210;
+
+public class Lab1210 { //start class
+
+    public static void main(String[] args) {//start main
+       
+//question number 2 
+
+x=y=z=1;
+x+=1; 
+
+//x= 2 
+//+= is a notation to increment the x variable which means that you add one to x which is one making x =2 
+
+x=5; y=6 ++x; 
+
+// x= 6 
+//++x means you increment the value of x prior to the calculation. This makes x 6. 
+//Y would = 12 in this instance 
+
+x=5;
+y=6 +x++; 
+
+//y=11
+//The value of x would increment after the equation was evaluated. This would leave x as 5. 
+
+ } //end main
+    
+} //end class
