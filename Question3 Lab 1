@@ -1,0 +1,26 @@
+package lab1pt3;
+//QUESTION 3
+import java.util.Scanner;
+public class Lab1pt3 {
+
+   
+    public static void main(String[] args) {
+     Scanner kb = new Scanner (System.in);
+       
+     int num;
+   
+
+      System.out.println("Please enter a number");
+       num=kb.nextInt();
+       
+    if((num > 40)||(num <10))
+    { //start if 1
+	System.out.println("number is out of bounds");
+    }//end if 1
+
+    else
+
+    {//start else
+        if(num%2 ==0)
+        System.out.println("The number is in bounds and even");
+    }//end else 
