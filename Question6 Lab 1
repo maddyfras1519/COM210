@@ -1,0 +1,58 @@
+package lab1pt5;
+import java.util.Arrays; //cannot have the same name as the project 
+public class Lab1pt5 
+{//class
+
+//QUESTION 6 
+ 
+    public static void main(String[] args) 
+    
+    {//main
+       
+        String B[ ]= {"eggs" , "cereal", "toast" , "bacon"};
+	int I[ ] = { 10, 20, 30 , 40}; 
+		
+	System.out.println(B[2]); //3rd term toast
+
+        System.out.println(I[3]); //4th term 40
+        
+   
+    //Print out of B before switch
+    System.out.println(Arrays.toString(B));
+    
+    System.out.println();
+      
+    //replace 2nd term to oatmeal
+    
+    B[2]="oatmeal";
+    //Print all values in B with switch
+    System.out.println(Arrays.toString(B));
+    
+    System.out.println();
+    
+   //sum 
+   int sum =0;
+   for (int i = 0; i < I.length; i++)
+            sum +=  I[i];
+        
+         System.out.println(sum);
+        
+    
+              
+    //return a cross 
+    System.out.println();
+     for( int i=0; i<=B.length-1;i++)
+            {           
+        for(int j=0;j<=I.length-1;j++)
+            
+		{ 
+                    System.out.println(B[i] +" "+ I[j]);
+		}
+            }
+     System.out.println("It took me 3 steps to print out all of the pairs");
+              
+              
+    }//main
+    
+   
+}//class
