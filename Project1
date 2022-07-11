@@ -1,0 +1,164 @@
+//Com 210 Stacks Project 
+//Maddy Frascogna Summer 2022
+package project1;
+import java.util.Scanner;
+import java.util.*;
+
+public class Project1 {//class
+
+   
+    public static void main(String[] args) {//main
+    Scanner kb=new Scanner(System.in);    
+    
+    //allowing user to input their sequence of code 
+    System.out.println("Enter your first character");
+     String one =kb.next(); 
+     System.out.println("Enter your second character");
+    String two =kb.next();    
+     System.out.println("Enter your third character");
+    String three =kb.next();     
+    System.out.println("Enter your fourth character");
+    String four =kb.next();     
+      
+     Boolean check =true; 
+    
+     String test = "(";
+     String show = "{";
+     String look = "[";
+     
+     String test1 = ")";
+     String show1 = "}";
+     String look1 = "]";
+     
+     System.out.println(one+two+three+four);
+     
+     //create stack
+     Stack<String> STACK = new Stack<String>();
+     
+ 
+  
+     if(one.equals(test) || one.equals (show) || one.equals(look))
+     {//one
+        STACK.push(one);
+            if ((two.equals(test1)) || (two.equals(show1))||(two.equals(look1)))
+             {//two one
+                 STACK.pop();
+                 if((one.equals(test)&& two.equals(test1))|| (one.equals(show)&&two.equals(show1)) || (one.equals(look)&& two.equals(look1)))
+                 System.out.println("match");
+             }//two one
+            else if ((three.equals(test1)) || (three.equals(show1))||(three.equals(look1)))
+             {//three one
+                STACK.pop();
+                  if((one.equals(test)&& three.equals(test1))|| (one.equals(show)&&three.equals(show1)) || (one.equals(look)&& three.equals(look1)))
+                  System.out.println("match");
+             }//three one 
+            else if (four.equals(test1) || four.equals(show1)||four.equals(look1))
+             {//four one
+                STACK.pop();
+                  if((one.equals(test)&& four.equals(test1))|| (one.equals(show)&&four.equals(show1)) || (one.equals(look)&& four.equals(look1)))
+                  System.out.println("match");
+             }//four one
+            else
+            {//else one
+                System.out.println("THIS IS AN ERROR");
+                check=false;
+            } //else one
+     }//one
+     
+      if(check =true)
+        {//boolean
+            STACK.push(one);
+            if((two.equals(test)) || (two.equals (show)) || (two.equals(look)))
+                {//two main
+                STACK.push(two); 
+                    if ((three.equals(test1)) ||( three.equals(show1))||(three.equals(look1)))
+                       {//three two
+                            STACK.pop();
+                            if((two.equals(test)&& three.equals(test1))|| (two.equals(show)&&three.equals(show1)) || (two.equals(look)&& three.equals(look1)))
+                            System.out.println("match");
+                        }//three two
+            else if ((four.equals(test1)) || (four.equals(show1))||(four.equals(look1)))
+                        {//four two
+                            STACK.pop();
+                            if((two.equals(test)&& four.equals(test1))|| (two.equals(show)&&four.equals(show1)) || (two.equals(look)&& four.equals(look1)))
+                            System.out.println("match");
+                        }//four two
+                        else
+                        {//else
+                        System.out.println("ERROR");
+                        check=false;
+                         }//else
+                }//two main
+        }//boolean
+                   
+    if(check =true)
+        STACK.push(one);
+        STACK.push(two);
+        {//boolean
+            if((three.equals(test))||( three.equals (show)) || (three.equals(look)))
+                {//three main
+                    STACK.push(two); 
+                    if ((four.equals(test1)) || (four.equals(show1))||(four.equals(look1)))
+                        {//four three
+                           STACK.pop();
+                            if((three.equals(test)&& four.equals(test1))|| (three.equals(show)&&four.equals(show1)) || (three.equals(look)&& four.equals(look1)))
+                            System.out.println("match");
+                        }//four three
+                     else
+                        {//else
+                         System.out.println("THIS is an incorrect statement");
+                         check=false;
+                        }//else
+             }//three main
+        }//boolean
+
+    if(check =true)
+        STACK.push(one);
+        STACK.push(two);
+        STACK.push(three);
+        {//boolean
+            if((four.equals(test))||( four.equals (show)) || (four.equals(look)))
+                {//four main
+                    System.out.println("This is an error, cannot have an open as last point in statement");
+                    
+                }//four main
+            
+        }//boolean
+                   
+      
+     
+    
+          
+    
+    
+    
+        
+        
+    } //main
+    
+    //methods
+    private int maxSize; //size of stack array 
+    private long[] stackArray; //   our array 
+    private int top; //top of stack
+    
+    public Project1(int s) //constructor
+            { //constructor
+                maxSize =s;//set Array size
+                stackArray = new long[maxSize]; //create array
+                top =-1; //no items yet
+             } //constructor
+    
+    public void push(long j) //push algo take item from top 
+    { //push 
+       stackArray[top++] =j; //increment top ,  insert item
+    } //push
+    
+    public long pop() //pop algo take item from top of stack
+    { //pop
+      return stackArray[top--];
+    } //pop
+    
+    
+    
+}//class
+
